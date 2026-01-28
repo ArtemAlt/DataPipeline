@@ -1,0 +1,38 @@
+input:
+  file: "data/input.txt"
+  encoding: "UTF-8"
+
+output:
+  file: "data/output.json"
+  format: "json"
+
+pipeline:
+  - name: "clean_html"
+    params:
+      remove_scripts: true
+      preserve_line_breaks: false
+
+  - name: "normalize_whitespace"
+    params:
+      replace_tabs: true
+      trim_lines: true
+
+  - name: "normalize_case"
+    params:
+      mode: "lower"
+
+  - name: "split_sentences"
+    params:
+      as_json: false
+      language: "ru"
+
+  - name: "remove_stopwords"
+    params:
+      language: "ru"
+      custom_words: ["пример", "текст"]
+
+  - name: "collect_stats"
+    params:
+      metrics: ["char_count", "word_count", "sentence_count"]
+      output_format: "text"
+  
