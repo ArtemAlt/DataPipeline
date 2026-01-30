@@ -1,6 +1,7 @@
 package config;
 
-interface InputConfig extends FilePath {
-    String getEncodingType();
+import config.core.InputEncodingType;
 
+interface InputConfig extends FilePath {
+    InputEncodingType getEncodingType();
 }

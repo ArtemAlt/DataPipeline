@@ -29,10 +29,10 @@ pipeline:
   - name: "remove_stopwords"
     params:
       language: "ru"
-      custom_words: ["пример", "текст"]
+      custom_words: [ "пример", "текст" ]
 
   - name: "collect_stats"
     params:
-      metrics: ["char_count", "word_count", "sentence_count"]
+      metrics: [ "char_count", "word_count", "sentence_count" ]
       output_format: "text"
   

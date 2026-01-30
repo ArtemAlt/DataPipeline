@@ -1,7 +1,7 @@
 package config;
 
-import config.core.FormatType;
+import config.core.OutputFormatType;
 
 public interface OutputConfig extends FilePath {
-    FormatType getFormatType();
+    OutputFormatType getFormatType();
 }
